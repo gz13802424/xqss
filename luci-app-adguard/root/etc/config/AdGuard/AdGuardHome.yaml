@@ -1,0 +1,177 @@
+bind_host: 0.0.0.0
+bind_port: 3000
+users:
+- name: root
+  password: $2y$05$mX9lLa2sLNt7iLVmPUT7euuGQleoZ.kJuSbehKQhy0kT2D3obH5Fy
+language: ""
+rlimit_nofile: 0
+web_session_ttl: 720
+dns:
+  bind_host: 0.0.0.0
+  port: 5335
+  statistics_interval: 7
+  querylog_enabled: false
+  querylog_interval: 1
+  querylog_memsize: 0
+  protection_enabled: true
+  blocking_mode: null_ip
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_response_ttl: 10
+  ratelimit: 0
+  ratelimit_whitelist: []
+  refuse_any: false
+  bootstrap_dns:
+  - 114.114.114.114:53
+  - 8.8.8.8:53
+  - 8.8.4.4:53
+  - 1.1.1.1:53
+  - 208.67.220.220:53
+  - 208.67.222.222:53
+  all_servers: true
+  edns_client_subnet: false
+  aaaa_disabled: false
+  allowed_clients: []
+  disallowed_clients: []
+  blocked_hosts: []
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  cache_size: 4194304
+  upstream_dns:
+  - tls://dns.adguard.com
+  - tls://dns.quad9.net
+  - tls://dns.google
+  - tls://1.1.1.1
+  - tls://1.0.0.1
+  - https://1.1.1.1/dns-query
+  - https://1.0.0.1/dns-query
+  - 119.29.29.29
+  - 114.114.114.114
+  - 223.5.5.5
+  - 101.226.4.6
+  - 180.76.76.76
+  - 1.2.4.8
+  - 168.95.1.1
+  - https://doh.cleanbrowsing.org/doh/adult-filter/
+  - https://doh.cleanbrowsing.org/doh/security-filter/
+  - tls://dns.google
+  - tls://dns.quad9.net
+  - https://doh.securedns.eu/dns-query
+  - https://doh-de.blahdns.com/dns-query
+  - https://ibksturm.synology.me/dns-query
+  - tls://dns.adguard.com
+  - 8.8.8.8
+  - tcp://8.8.8.8
+  - tcp://8.8.4.4
+  - tcp://1.1.1.1
+  - tcp://4.2.2.1
+  - 4.2.2.3
+  - tcp://4.2.2.3
+  - 4.2.2.4
+  - tcp://4.2.2.4
+  - sdns://AgcAAAAAAAAADjE1MC4xMDkuNzQuMTY0ABBoay1kbnMuMjMzcHkuY29tCi9kbnMtcXVlcnk
+  - sdns://AQcAAAAAAAAAEDQ3LjEwMS4xMzYuMzc6MjIgCRIqxqrF-npxg2-xjGLKvzuxvS7hCGgXx_x_4K85yHYZMi5kbnNjcnlwdC1jZXJ0LjIzM3B5LmNvbQ
+  - https://dns.rubyfish.cn/dns-query
+  - https://hk-dns.233py.com/dns-query
+  filtering_enabled: true
+  filters_update_interval: 24
+  parental_enabled: true
+  safesearch_enabled: true
+  safebrowsing_enabled: true
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  rewrites: []
+  blocked_services: []
+tls:
+  enabled: false
+  server_name: ""
+  force_https: false
+  port_https: 443
+  port_dns_over_tls: 853
+  allow_unencrypted_doh: false
+  strict_sni_check: false
+  certificate_chain: ""
+  private_key: ""
+  certificate_path: ""
+  private_key_path: ""
+filters:
+- enabled: true
+  url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+  name: AdGuard Simplified Domain Names filter
+  id: 1
+- enabled: true
+  url: https://adaway.org/hosts.txt
+  name: AdAway
+  id: 2
+- enabled: false
+  url: https://hosts-file.net/ad_servers.txt
+  name: hpHosts - Ad and Tracking servers only
+  id: 3
+- enabled: false
+  url: https://www.malwaredomainlist.com/hostslist/hosts.txt
+  name: MalwareDomainList.com Hosts List
+  id: 4
+- enabled: true
+  url: https://raw.githubusercontent.com/vokins/yhosts/master/data/tvbox.txt
+  name: tvbox
+  id: 1575018007
+- enabled: true
+  url: https://hosts.nfz.moe/full/hosts
+  name: neoHosts full
+  id: 1575618240
+- enabled: false
+  url: http://sbc.io/hosts/hosts
+  name: StevenBlack host basic
+  id: 1575618242
+- enabled: false
+  url: http://sbc.io/hosts/alternates/fakenews-gambling-porn-social/hosts
+  name: StevenBlack host+fakenews + gambling + porn + social
+  id: 1575618243
+- enabled: false
+  url: https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD/anti-ad-easylist.txt
+  name: anti-AD(Adblock+neohosts+yhosts+cjxlist+adhlist)
+  id: 1577113202
+- enabled: true
+  url: https://easylist.to/easylist/easylist.txt
+  name: EasyList
+  id: 1582212381
+- enabled: true
+  url: https://easylist-downloads.adblockplus.org/easylistchina.txt
+  name: EasyList China
+  id: 1582212382
+- enabled: true
+  url: https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
+  name: CJX's Annoyance List
+  id: 1582212384
+- enabled: true
+  url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
+  name: EasyPrivacy
+  id: 1582212385
+- enabled: true
+  url: https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt
+  name: AdblockPlus
+  id: 1582212386
+- enabled: true
+  url: http://tools.yiclear.com/ChinaList2.0.txt
+  name: ChinaListV2.0[20200217000]
+  id: 1582212387
+- enabled: false
+  url: https://fanboy.co.nz/r/fanboy-ultimate.txt
+  name: Fanboy+Easylist-Merged Ultimate List
+  id: 1582212388
+user_rules: []
+dhcp:
+  enabled: false
+  interface_name: ""
+  gateway_ip: ""
+  subnet_mask: ""
+  range_start: ""
+  range_end: ""
+  lease_duration: 86400
+  icmp_timeout_msec: 1000
+clients: []
+log_file: ""
+verbose: false
+schema_version: 6
